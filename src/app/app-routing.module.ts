@@ -4,7 +4,7 @@ import {CountdownComponent} from "./countdown/countdown.component";
 
 const routes: Routes = [
   {
-    path: 'countdown',
+    path: 'vegas',
     component: CountdownComponent
   }
 ];
