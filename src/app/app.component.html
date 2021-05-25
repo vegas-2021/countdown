@@ -1,7 +1,7 @@
 <div class="container">
   <div class="counter">
     <ng-container *ngIf="timer$ | async as timer">
-      <div class="content" [ngStyle]="{marginLeft: i > 0 ? '50px' : '0px'}" *ngFor="let i of [0,1,2,3,4,5,6,7,8,9]">
+      <div class="content" [ngStyle]="{marginLeft: i > 0 ? margin : '0px'}" *ngFor="let i of [0,1,2,3,4,5,6,7,8,9]">
         <div style="position:absolute">
           <div class="flip">
             <div class="up">

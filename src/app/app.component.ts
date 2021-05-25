@@ -1,4 +1,4 @@
-import {Component, Input, VERSION} from "@angular/core";
+import {Component, Input, OnInit, VERSION} from "@angular/core";
 import {animate, keyframes, style, transition, trigger} from "@angular/animations";
 import {BehaviorSubject, Subject, timer} from "rxjs";
 import {map, pairwise, switchMap, takeUntil, tap} from "rxjs/operators";
@@ -27,16 +27,23 @@ import {map, pairwise, switchMap, takeUntil, tap} from "rxjs/operators";
     )
   ]
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   change: boolean = false;
   showShadow = [];
   name = "Angular " + VERSION.major;
   initialMinutes$ = new BehaviorSubject(30);
   expired$ = new Subject();
+  margin = "50px";
 
   @Input()
   set minutes(val: number) {
     this.initialMinutes$.next(val);
+  }
+
+  ngOnInit(){
+    if(window.innerWidth < 600){
+      this.margin = "25px";
+    }
   }
 
   value = 0;
